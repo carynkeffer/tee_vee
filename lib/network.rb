@@ -31,4 +31,22 @@ class Network
     end
     by_show
   end
+
+  def shows_by_actor
+    by_actor = Hash.new
+    shows.each do |show|
+      actor_names = []
+      show.characters.each do |character|
+        actor_names << character.actor
+          show_names = []
+          actor_names.each do |actor|
+            show_names << show.name
+            by_actor[actor] = show.name
+        end
+        by_actor
+      end
+    end
+    require "pry"; binding.pry
+    # figure out how to add baywatch to knight_rider
+  end
 end
